@@ -451,12 +451,12 @@ footer {
   .hero {
     flex-direction: column;
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 40px 20px 40px;
   }
 
   .hero-foto img {
     width: 220px;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .hero-texto h1 {
@@ -506,3 +506,35 @@ footer {
   }
 }
 
+
+
+
+
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .galeria {
+    width: 100%;
+    max-width: 360px; /* mesma largura do celular */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .galeria-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+
+  .galeria-item {
+    flex: 0 0 100%; /* um item por vez */
+    max-width: 100%;
+  }
+
+  .galeria-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+  }
+}
