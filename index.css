@@ -310,11 +310,9 @@ footer {
 }
 
 
-
-
 /* === RESPONSIVIDADE === */
 
-/* CARROSSEL ATIVO EM TELAS MENORES */
+/* === 1. GALERIA - CARROSSEL EM TELAS MENORES (ATÉ 1024px) === */
 @media (max-width: 1024px) {
   .galeria {
     position: relative;
@@ -382,14 +380,14 @@ footer {
   }
 }
 
-/* EM TELAS MAIORES, VOLTA AO PADRÃO DESKTOP */
+/* === 2. GALERIA EM TELAS MAIORES (DESKTOP) === */
 @media (min-width: 1025px) {
   .galeria-setas {
     display: none;
   }
 
   .galeria-inner {
-    display: contents; /* desativa flex interno em telas grandes */
+    display: contents;
   }
 
   .galeria-item {
@@ -431,17 +429,9 @@ footer {
   .galeria-item:hover .descricao {
     opacity: 1;
   }
-
-  .galeria-setas {
-    display: none; /* esconde setas em telas grandes */
-  }
 }
 
-
-
-
-
-
+/* === 3. HERO EM CELULARES PEQUENOS (ATÉ 600px) === */
 @media (max-width: 600px) {
   section {
     padding: 40px 20px;
@@ -450,13 +440,16 @@ footer {
 
   .hero {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 40px 20px 40px;
+    padding: 40px 20px;
+    gap: 15px;
   }
 
   .hero-foto img {
     width: 220px;
-    margin-top: 10px;
+    margin: 0;
   }
 
   .hero-texto h1 {
@@ -470,6 +463,7 @@ footer {
   .botao {
     padding: 10px 40px;
     font-size: 1rem;
+    margin-top: 0;
   }
 
   .sobre-colunas {
@@ -506,35 +500,44 @@ footer {
   }
 }
 
+/* === 4. HERO EM CELULARES MUITO PEQUENOS (ATÉ 420px) === */
+@media (max-width: 420px) {
+  .hero {
+    padding: 30px 15px;
+    gap: 12px;
+  }
 
+  .hero-foto img {
+    width: 180px;
+    margin: 0;
+  }
 
+  .botao {
+    padding: 10px 30px;
+    font-size: 0.95rem;
+    margin-top: 0;
+  }
+}
 
-
-
-
+/* === 5. HERO EM TABLETS (ENTRE 601px E 1024px) === */
 @media (min-width: 601px) and (max-width: 1024px) {
-  .galeria {
-    width: 100%;
-    max-width: 360px; /* mesma largura do celular */
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 30px;
+    gap: 20px;
   }
 
-  .galeria-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
+  .hero-foto img {
+    width: 240px;
+    margin: 50px 0 0 0;
   }
 
-  .galeria-item {
-    flex: 0 0 100%; /* um item por vez */
-    max-width: 100%;
-  }
-
-  .galeria-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 30px;
+  .botao {
+    padding: 12px 50px;
+    font-size: 1.05rem;
+    margin-top: 0;
   }
 }
